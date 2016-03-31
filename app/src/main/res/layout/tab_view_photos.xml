@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.datonicgroup.narrate.app.ui.views.TabView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/dashboard"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:background="@drawable/default_selector"
+    android:contentDescription="Dashboard"
+    android:gravity="center_vertical"
+    app:src="@drawable/ic_photos_section"
+    app:text="Dashboard" />

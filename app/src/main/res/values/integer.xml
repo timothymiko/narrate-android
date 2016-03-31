@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="anim_defaultAnimTime">325</integer>
+    <integer name="google_play_services_version">8487000</integer>
+</resources>

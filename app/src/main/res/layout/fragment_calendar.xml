@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/cal_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/section_calendar"
+        android:paddingBottom="10dp"
+        android:paddingLeft="16dp">
+
+        <TextView
+            android:id="@+id/cal_header_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-6dp"
+            android:gravity="center"
+            android:text="12"
+            android:textColor="@color/white"
+            android:textSize="38dp" />
+
+        <TextView
+            android:id="@+id/cal_header_day_of_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/cal_header_day"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@id/cal_header_day"
+            android:gravity="center"
+            android:paddingLeft="8dp"
+            android:text="Friday"
+            android:textColor="@color/white"
+            android:textSize="13dp" />
+
+        <LinearLayout
+            android:id="@+id/cal_header_month_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/cal_header_day"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="4dp"
+            android:layout_toRightOf="@id/cal_header_day"
+            android:background="@drawable/default_selector"
+            android:clickable="true"
+            android:orientation="horizontal"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp">
+
+            <TextView
+                android:id="@+id/cal_header_month_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="December 2014"
+                android:textColor="@color/white"
+                android:textSize="13dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="1dp"
+                android:src="@drawable/ic_arrow_down_selector" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <com.android.datetimepicker.date.AccessibleDateAnimator
+        android:id="@+id/animator"
+        android:layout_width="match_parent"
+        android:paddingLeft="8dp"
+        android:paddingRight="8dp"
+        android:layout_height="@dimen/calendar_height"
+        android:layout_below="@id/cal_header"
+        android:background="@color/date_picker_view_animator" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/list"
+        android:layout_below="@id/animator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <View
+        android:layout_below="@id/animator"
+        android:layout_width="match_parent"
+        android:layout_height="10dp"
+        android:background="@drawable/simple_horizontal_shadow" />
+
+</RelativeLayout>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<android.support.v7.widget.Toolbar-->
+    <!--android:id="@+id/toolbar"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:background="?attr/colorPrimary"-->
+    <!--android:minHeight="@dimen/toolbar_height"-->
+    <!--custom:contentInsetLeft="0dp"-->
+    <!--custom:contentInsetStart="0dp"-->
+    <!--custom:popupTheme="@style/ThemeOverlay.AppCompat.Dark"-->
+    <!--custom:theme="@style/Toolbar" />-->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/off_white"
+        android:paddingTop="?actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/default_gap"
+            android:layout_marginRight="@dimen/default_gap"
+            android:layout_marginTop="@dimen/default_gap"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                android:hint="@string/title"
+                android:autoText="true"
+                android:imeOptions="actionNext"
+                android:inputType="textCapSentences|textMultiLine|textShortMessage|textAutoCorrect"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/abc_secondary_text_material_light"
+                android:textCursorDrawable="@null"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+x
+            <EditText
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="4dp"
+                android:hint="@string/text"
+                android:background="@null"
+                android:autoText="true"
+                android:inputType="textCapSentences|textMultiLine|textLongMessage|textAutoCorrect"
+                android:textColor="@color/primary_text"
+                android:textColorHint="@color/abc_secondary_text_material_light"
+                android:textCursorDrawable="@null"
+                android:textSize="16sp"
+                android:paddingBottom="75dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="#BF212121"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <RelativeLayout
+            style="@style/AppTheme.EditEntry.DetailLayout">
+
+            <ImageView
+                android:id="@+id/time"
+                style="@style/AppTheme.EditEntry.DetailItem"
+                android:src="@drawable/ic_time" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/AppTheme.EditEntry.DetailLayout">
+
+            <ImageView
+                android:id="@+id/date"
+                style="@style/AppTheme.EditEntry.DetailItem"
+                android:src="@drawable/ic_date" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/AppTheme.EditEntry.DetailLayout">
+
+            <ImageView
+                android:id="@+id/photo"
+                style="@style/AppTheme.EditEntry.DetailItem"
+                android:src="@drawable/ic_photo" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/AppTheme.EditEntry.DetailLayout">
+
+            <com.datonicgroup.narrate.app.ui.views.ColorFilterImageView
+                android:id="@+id/location_loader"
+                android:visibility="gone"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/entry_location_loader"
+                android:layout_centerInParent="true"
+                custom:colorFilter="@color/entries_color_1" />
+
+            <com.datonicgroup.narrate.app.ui.views.ColorFilterImageView
+                android:id="@+id/location"
+                style="@style/AppTheme.EditEntry.DetailItem"
+                android:src="@drawable/ic_location"
+                custom:colorFilter="@color/off_white" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            style="@style/AppTheme.EditEntry.DetailLayout">
+
+            <com.datonicgroup.narrate.app.ui.views.ColorFilterImageView
+                android:id="@+id/tag"
+                style="@style/AppTheme.EditEntry.DetailItem"
+                android:src="@drawable/ic_tag"
+                custom:colorFilter="@color/off_white"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

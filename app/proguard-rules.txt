@@ -1,0 +1,166 @@
+# Add project specific ProGuard rules here.
+# By default, the flags in this file are appended to flags specified
+# in C:/Users/admin/AppData/Local/Android/android-studio/sdk/tools/proguard/proguard-android.txt
+# You can edit the include path and order by changing the ProGuard
+# include property in project.properties.
+#
+# For more details, see
+#   http://developer.android.com/guide/developing/tools/proguard.html
+
+# Add any project specific keep options here:
+
+# If your project uses WebView with JS, uncomment the following
+# and specify the fully qualified class name to the JavaScript interface
+# class:
+#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
+#   public *;
+#}
+###################################################################
+#                                                                 #
+#                          CONFIGURATION                          #
+#                                                                 #
+###################################################################
+
+-printseeds seeds.txt
+-printusage unused.txt
+-printmapping mapping.txt
+
+
+###################################################################
+#                                                                 #
+#                          OPTIMIZATIONS                          #
+#                                                                 #
+###################################################################
+
+-repackageclasses "com.datonicgroup.internal"
+
+-optimizations !code/simplification/arithmetic,!code/simplification/cast,!field/*,!class/merging/*
+-optimizationpasses 5
+-allowaccessmodification
+-dontpreverify
+-libraryjars libs
+
+# See http://www.crashlytics.com/blog/mastering-proguard-for-building-lightweight-android-code/ for the following config options
+-keepattributes SourceFile,LineNumberTable
+-dontusemixedcaseclassnames
+-dontskipnonpubliclibraryclasses
+-verbose
+
+-dontskipnonpubliclibraryclassmembers # required by JACKSON library
+
+-keepattributes *Annotation*,EnclosingMethod
+-keepattributes Signature
+
+
+###################################################################
+#                                                                 #
+#     The following lines are for the indicated libraries         #
+#                                                                 #
+###################################################################
+
+-dontwarn android.util.**
+
+# FLURRY
+-keep public class com.flurry.android.FlurryAgent { *; }
+-keep class com.flurry.** { *; }
+-keep interface com.flurry.** { *;}
+-dontwarn com.flurry.**
+
+-dontwarn org.apache.**
+-dontwarn com.androidquery.**
+
+# CRASHLYTICS
+-keep class com.crashlytics.** { *; }
+
+# SQUARE/OKHTTP
+-keep class com.android.vending.billing.**
+-dontwarn com.facebook.android.BuildConfig
+-dontwarn rx.**
+-dontwarn okio.**
+-dontwarn com.squareup.okhttp.*
+-dontwarn retrofit.appengine.UrlFetchClient
+-keepattributes Annotation
+-keep class retrofit.** { *; }
+-keepclasseswithmembers class * {
+@retrofit.http.* <methods>; }
+-keepattributes Signature
+
+# BYPASS
+-keep class in.uncod.** { *; }
+
+# GOOGLE PLAY SERVICES
+-keep class * extends java.util.ListResourceBundle {
+    protected Object[][] getContents();
+}
+
+-keep public class com.google.android.gms.common.internal.safeparcel.SafeParcelable {
+    public static final *** NULL;
+}
+
+-keepnames @com.google.android.gms.common.annotation.KeepName class *
+-keepclassmembernames class * {
+    @com.google.android.gms.common.annotation.KeepName *;
+}
+
+-keepnames class * implements android.os.Parcelable {
+    public static final ** CREATOR;
+}
+
+# JODATIME
+-keep public class org.joda.time.** {public private protected *;}
+-dontwarn org.joda.time.**
+
+# ANDROID SUPPORT LIBRARIES
+# support-v4
+#-dontwarn android.support.v4.**
+-keep class android.support.v4.app.** { *; }
+-keep interface android.support.v4.app.** { *; }
+
+# support-v7
+#-dontwarn android.support.v7.**
+-keep class android.support.v7.internal.** { *; }
+-keep interface android.support.v7.internal.** { *; }
+-keep class android.support.v7.** { *; }
+-keep interface android.support.v7.** { *; }
+
+
+# GOOGLE API CLIENT LIBRARIES
+# Needed to keep generic types and @Key annotations accessed via reflection
+-keepattributes Signature,RuntimeVisibleAnnotations,AnnotationDefault
+
+-keepclassmembers class * {
+  @com.google.api.client.util.Key <fields>;
+}
+
+# Needed by google-http-client-android when linking against an older platform version
+-dontwarn com.google.api.client.extensions.android.**
+
+# Needed by google-api-client-android when linking against an older platform version
+
+-dontwarn com.google.api.client.googleapis.extensions.android.**
+
+# Needed by google-play-services when linking against an older platform version
+
+-dontwarn com.google.android.gms.**
+
+# com.google.client.util.IOUtils references java.nio.file.Files when on Java 7+
+-dontnote java.nio.file.Files, java.nio.file.Path
+
+# Suppress notes on LicensingServices
+-dontnote **.ILicensingService
+
+# Suppress warnings on sun.misc.Unsafe
+-dontnote sun.misc.Unsafe
+-dontwarn sun.misc.Unsafe
+
+# JACKSON
+-dontwarn org.w3c.dom.bootstrap.DOMImplementationRegistry
+-keep class org.codehaus.** { *; }
+-keepnames class org.codehaus.jackson.** { *; }
+
+-dontwarn javax.xml.**
+-dontwarn javax.xml.stream.events.**
+-dontwarn com.fasterxml.jackson.databind.**
+
+-keepnames class com.fasterxml.jackson.** { *; }
+-dontwarn com.fasterxml.jackson.databind.**

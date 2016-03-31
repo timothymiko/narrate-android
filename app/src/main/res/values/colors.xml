@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="dark_primary">#455a64</color>
+    <color name="primary">#315e73</color>
+    <color name="light_primary">#cfd8dc</color>
+    <color name="text_icons">#ffffff</color>
+    <color name="accent">#009688</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#727272</color>
+    <color name="divider">#E0E0E0</color>
+
+    <color name="window_background">#323232</color>
+
+    <color name="icon_color_1">#13A085</color>
+    <color name="icon_color_2">#34495D</color>
+
+    <color name="off_white">#F0F0F0</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="turqouise">#1ABC9C</color>
+    <color name="green_sea">#16A085</color>
+    <color name="sun_flower">#F1C40F</color>
+    <!--<color name="orange">#F39C12</color>-->
+    <color name="emerland">#2ECC71</color>
+    <color name="nephritis">#27AE60</color>
+    <color name="carrot">#E57E31</color>
+    <color name="pumpkin">#D2531A</color>
+    <color name="peter_river">#3B99D9</color>
+    <color name="belize_hole">#2F80B6</color>
+    <color name="alizarin">#E64D43</color>
+    <color name="pomgeranate">#BF3A32</color>
+    <color name="amethyst">#9A5BB3</color>
+    <color name="wisteria">#8C48AB</color>
+    <color name="clouds">#ECF0F1</color>
+    <color name="silver">#BEC3C7</color>
+    <color name="wet_asphalt">#5E6E7D</color>
+    <color name="midnight_blue">#2E3E4F</color>
+    <color name="concrete">#95A5A5</color>
+    <color name="asbestos">#7E8C8C</color>
+    <color name="light_gray">#EFEFEF</color>
+    <color name="gray">#D0D0D0</color>
+
+    <color name="entries_color_1">#E44C4A</color>
+    <color name="entries_color_2">#8A4D9D</color>
+    <color name="entries_color_3">#3888B5</color>
+    <color name="entries_color_4">#46A560</color>
+    <color name="entries_color_5">#3CB799</color>
+
+    <color name="Transparent">#0fff</color>
+    <color name="Transparent_Almost">#11000000</color>
+    <color name="White">#FFFFFFFF</color>
+    <color name="Grey">#ccc</color>
+    <color name="Grey_Dark">#aaa</color>
+    <color name="Grey_Light">#eee</color>
+    <color name="Grey_Transparent">#cccc</color>
+    <color name="Grey_Transparent_Shadow">#4ccc</color>
+    <color name="Black">#000</color>
+    <color name="Black_Light_Transparent">#c333</color>
+    <color name="Black_Light">#333</color>
+    <color name="Black_Transparent">#cc000000</color>
+    <color name="Black_Transparent_Extra">#88000000</color>
+    <color name="Black_Transparent_Shadow">#3000</color>
+    <color name="BlueGrey_Transparent">#cc263238</color>
+    <color name="Blue_Dark_Transparent">#cc2a36b1</color>
+    <color name="Red_Dark_Transparent">#ccb0120a</color>
+    <color name="Purple_Dark_Transparent">#cc47228c</color>
+    <color name="Orange_Dark_Transparent">#ccd84315</color>
+
+    <color name="Filter_Section_Title">#78909c</color>
+    <color name="Dialog_Button_Positive">#78909c</color>
+    <color name="Dialog_Button_Negative">@color/Black_Light</color>
+    <color name="Dialog_Button_Delete">#e51c23</color>
+
+    <color name="Pressed_Default">#5ccc</color>
+    <color name="Focused_Default">#5fff</color>
+
+    <color name="BlueGrey_Light">#4e585c</color>
+
+    <color name="red">#f44336</color>
+    <color name="purple">#9c27b0</color>
+    <color name="purple_deep">#673ab7</color>
+    <color name="indigo">#3f51b5</color>
+    <color name="blue">#2196f3</color>
+    <color name="cyan">#00bcd4</color>
+    <color name="teal">#009688</color>
+    <color name="green">#4caf50</color>
+    <color name="amber">#ffc107</color>
+    <color name="orange">#ff9800</color>
+    <color name="orange_deep">#ff5722</color>
+    <color name="grey">#9e9e9e</color>
+    <color name="blue_grey">#607d8b</color>
+
+    <integer-array name="grid_bg_colors">
+        <item>@color/purple_deep</item>
+        <item>@color/indigo</item>
+        <item>@color/blue</item>
+        <item>@color/cyan</item>
+        <item>@color/teal</item>
+        <item>@color/green</item>
+        <item>@color/grey</item>
+        <item>@color/blue_grey</item>
+    </integer-array>
+
+    <color name="dropbox_blue">#007ee5</color>
+
+    <color name="section_list">@color/matted_blue</color>
+    <color name="section_photos">@color/BlueGrey_Light</color>
+    <color name="section_calendar">#41813D</color>
+    <color name="section_places">#A32E2E</color>
+
+    <color name="Thumb.Background">@color/BlueGrey_Light</color>
+    <color name="Thumb.Text">@color/Grey_Dark</color>
+
+    <color name="matted_blue">#315E73</color>
+    <color name="matted_blue_accent">#2D4B58</color>
+
+    <color name="setup_button_unselected">#11776D</color>
+    <color name="setup_button_selected">@color/accent</color>
+</resources>

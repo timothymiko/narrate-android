@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.datonicgroup.narrate.app">
+
+    <!--
+    DANGEROUS PERMISSIONS
+    -->
+    <!-- Required for adding location to entries -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Required for local backups to SD card -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- Required for synchronization -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <!--
+    NORMAL PERMISSIONS
+    -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <!-- In App Billing -->
+    <uses-permission android:name="com.android.vending.BILLING" />
+
+    <!-- Google Now Integration-->
+    <uses-permission android:name="com.google.android.gm.permission.AUTO_SEND" />
+
+    <!-- Reminders -->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <!-- Required for synchronization -->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_SYNC_STATS" />
+    <!-- required for setIsSyncable -->
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+
+    <!-- Push Notifications -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:protectionLevel="signature"
+        android:name="com.datonicgroup.narrate.app.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.datonicgroup.narrate.app.permission.C2D_MESSAGE" />
+
+    <application
+        android:name=".ui.GlobalApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+
+        <meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="4b7f0e6525b85af81b3820eda2d45839f0b857fb" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAr3X3_n6t92AgwOYLJIN8mL8cdnJ_o2gM"/>
+
+        <!-- add project number of google console project-->
+        <meta-data android:name="com.parse.push.gcm_sender_id"
+            android:value="101409433094" />
+
+        <!-- UI Activities -->
+        <activity
+            android:name=".ui.MainActivity"
+            android:alwaysRetainTaskState="true"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.datonicgroup.narrate.app.ui.setup.SetupActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.Setup"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name="com.datonicgroup.narrate.app.ui.reminders.RemindersActivity"
+            android:label="@string/title_activity_reminders"
+            android:parentActivityName=".ui.settings.MaterialPreferencesActivity"
+            android:theme="@style/AppTheme">
+        </activity>
+        <activity
+            android:name="com.datonicgroup.narrate.app.ui.entryeditor.EditEntryActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.EditEntry"  >
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.google.android.voicesearch.SELF_NOTE" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.datonicgroup.narrate.app.ui.entries.ViewEntryActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.ViewEntry" />
+        <activity
+            android:name="com.datonicgroup.narrate.app.ui.entries.ViewPhotoActivity"
+            android:parentActivityName="com.datonicgroup.narrate.app.ui.entryeditor.EditEntryActivity"
+            android:theme="@style/AppTheme.ViewEntry" />
+        <activity android:name=".ui.settings.MaterialPreferencesActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.Settings"/>
+        <activity
+            android:name=".ui.passcode.PasscodeUnlockActivity"
+            android:parentActivityName=".ui.MainActivity"
+            android:theme="@style/AppTheme.Settings"
+            android:windowSoftInputMode="stateHidden"
+            android:launchMode="singleInstance">
+        </activity>
+        <activity
+            android:name=".ui.passcode.PasscodeManagePasswordActivity"
+            android:parentActivityName=".ui.settings.MaterialPreferencesActivity"
+            android:theme="@style/AppTheme.Settings"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+
+        <activity
+            android:name=".ui.dialogs.LocationPickerDialog"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.Transparent" >
+        </activity>
+
+        <activity
+            android:name=".ui.dialogs.PlaceOnAMapDialog"
+            android:excludeFromRecents="true"
+            android:launchMode="singleInstance"
+            android:theme="@style/Platform.AppCompat.Light" >
+        </activity>
+
+        <activity
+            android:name="com.dropbox.client2.android.AuthActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask" >
+            <intent-filter>
+
+                <!-- Change this to be db- followed by your app key -->
+                <data android:scheme="db-ofrnqii403pthq9" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.datonicgroup.narrate.app.ui.entryeditor.NoteToSelfActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" >
+            <intent-filter>
+                <action android:name="com.google.android.gm.action.AUTO_SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <!-- End of UI Activities -->
+
+        <receiver android:name=".ui.QuickEntryWidget" >
+            <intent-filter >
+                <action
+                    android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/quick_entry_widget" />
+        </receiver>
+        <receiver
+            android:name=".dataprovider.receivers.AlarmReceiver"></receiver>
+        <receiver android:name=".dataprovider.receivers.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".dataprovider.receivers.WifiReceiver">
+            <intent-filter>
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.wifi.supplicant.CONNECTION_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.wifi.supplicant.STATE_CHANGE" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".dataprovider.receivers.EntryReceiver">
+            <intent-filter>
+                <action android:name="com.narrate.action.SAVE_ENTRY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.narrate.action.NEW_ENTRY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".dataprovider.sync.AuthenticatorService">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+
+        <provider
+            android:authorities="com.datonicgroup.narrate.app.provider"
+            android:name=".dataprovider.providers.DataProvider"
+            android:exported="false"
+            android:syncable="true"/>
+        <service android:name=".dataprovider.sync.SyncService"
+            android:exported="false"
+            tools:ignore="ExportedService">
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+            <meta-data android:name="android.content.SyncAdapter"
+                android:resource="@xml/syncadapter" />
+        </service>
+
+        <service android:name="com.parse.PushService" />
+
+        <receiver android:name="com.parse.ParseBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.parse.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <!--Change with your package name-->
+                <category android:name="com.datonicgroup.narrate.app" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".dataprovider.receivers.ParseGCMPushReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

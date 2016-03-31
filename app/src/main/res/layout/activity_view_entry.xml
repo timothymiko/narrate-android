@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:res-auto="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.datonicgroup.narrate.app.ui.views.ListeningScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/off_white"
+        android:clipChildren="false"
+        android:overScrollMode="never">
+
+        <RelativeLayout
+            android:id="@+id/root_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/image_layout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:maxHeight="250dp"
+                    android:scaleType="centerCrop" />
+
+                <View
+                    android:id="@+id/shadow1"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/simple_horizontal_shadow"
+                    android:rotation="180" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_layout"
+                android:background="@color/primary"
+                android:paddingBottom="@dimen/view_entry_title_layout_vertical_padding"
+                android:paddingLeft="43dp"
+                android:paddingRight="@dimen/default_gap"
+                android:paddingTop="24dp">
+
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="70dp"
+                    android:text="Today was a great day"
+                    android:textColor="@color/off_white"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/image_title_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/image_layout"
+                android:background="@color/accent"
+                android:paddingBottom="18dp"
+                android:paddingLeft="43dp"
+                android:paddingRight="16dp"
+                android:paddingTop="18dp">
+
+
+                <TextView
+                    android:id="@+id/image_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="Today was a great day"
+                    android:textColor="@color/off_white"
+                    android:textSize="20dp" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/title_layout"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/time"
+                    style="@style/AppTheme.ViewEntry.DetailLayout"
+                    android:layout_marginTop="@dimen/twenty_four_dp">
+
+                    <com.datonicgroup.narrate.app.ui.views.ColorFilterImageView
+                        android:id="@+id/date_time_image"
+                        style="@style/AppTheme.ViewEntry.DetailImage"
+                        android:src="@drawable/ic_date" />
+
+                    <TextView
+                        android:id="@+id/time_text"
+                        style="@style/AppTheme.ViewEntry.DetailText"
+                        android:fontFamily="sans-serif" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/location"
+                    style="@style/AppTheme.ViewEntry.DetailLayout">
+
+                    <com.datonicgroup.narrate.app.ui.views.ColorFilterImageView
+                        android:id="@+id/location_icon"
+                        style="@style/AppTheme.ViewEntry.DetailImage"
+                        android:src="@drawable/ic_location" />
+
+                    <TextView
+                        android:id="@+id/location_text"
+                        style="@style/AppTheme.ViewEntry.DetailText"
+                        android:fontFamily="sans-serif" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tags_layout"
+                    style="@style/AppTheme.ViewEntry.DetailLayout">
+
+                    <com.datonicgroup.narrate.app.ui.views.ColorFilterImageView
+                        android:id="@+id/tags_icon"
+                        style="@style/AppTheme.ViewEntry.DetailImage"
+                        android:src="@drawable/ic_tag" />
+
+                    <TextView
+                        android:id="@+id/tags_text"
+                        style="@style/AppTheme.ViewEntry.DetailText"
+                        android:fontFamily="sans-serif" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/details"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="30dp"
+                android:layout_marginTop="@dimen/twenty_four_dp"
+                android:autoLink="web"
+                android:fontFamily="sans-serif"
+                android:linksClickable="true"
+                android:textColor="@color/primary_text"
+                android:textIsSelectable="true" />
+
+            <TextView
+                android:id="@+id/edited_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/text"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="35dp"
+                android:fontFamily="sans-serif"
+                android:textColor="#AAAAAA"
+                android:textSize="13dp" />
+
+            <FrameLayout
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="12dp">
+
+                <ImageView
+                    android:id="@+id/fab_bg"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/fab" />
+
+                <com.datonicgroup.narrate.app.ui.views.BookmarkView
+                    android:id="@+id/bookmark"
+                    android:layout_width="8dp"
+                    android:layout_height="21dp"
+                    android:layout_gravity="center"
+                    res-auto:fill_color="@color/off_white" />
+
+                <View
+                    android:id="@+id/fab_selector"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/fab_selector"
+                    android:clickable="true" />
+
+            </FrameLayout>
+
+        </RelativeLayout>
+    </com.datonicgroup.narrate.app.ui.views.ListeningScrollView>
+
+    <View
+        android:id="@+id/toolbar_button_shadow"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@drawable/simple_horizontal_shadow" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:minHeight="?actionBarSize"
+        res-auto:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        res-auto:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="status_bar_bg" type="id"/>
+    <item name="settings_title" type="id"/>
+    <item name="settings_text" type="id"/>
+    <item name="settings_switch" type="id"/>
+    <item name="settings_button" type="id"/>
+</resources>

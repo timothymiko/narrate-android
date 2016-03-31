@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <solid
+        android:color="@color/peter_river"/>
+
+    <size
+        android:width="@dimen/circle_background_width"
+        android:height="@dimen/circle_background_height"/>
+
+    <corners
+        android:topLeftRadius="@dimen/entries_date_bg_corner"
+        android:topRightRadius="@dimen/entries_date_bg_corner"
+        android:bottomLeftRadius="@dimen/entries_date_bg_corner"
+        android:bottomRightRadius="@dimen/entries_date_bg_corner" />
+</shape>

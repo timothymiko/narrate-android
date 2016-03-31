@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.datonicgroup.narrate.app.ui.setup.SetupActivity">
+
+    <ImageView
+        android:id="@+id/image_one"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/setup_1" />
+
+    <ImageView
+        android:id="@+id/image_two"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#26000000" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="12dp"
+        app:fillColor="@color/off_white"
+        app:pageColor="#80D0D0D0"
+        app:radius="4dp"
+        app:strokeWidth="0px" />
+
+    <!--<ImageView-->
+        <!--android:id="@+id/left_arrow"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:clickable="true"-->
+        <!--android:background="@drawable/default_selector"-->
+        <!--android:layout_marginLeft="24dp"-->
+        <!--android:layout_marginBottom="30dp"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:visibility="gone"-->
+        <!--android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha"/>-->
+
+    <!--<ImageView-->
+        <!--android:id="@+id/right_arrow"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:clickable="true"-->
+        <!--android:background="@drawable/default_selector"-->
+        <!--android:layout_marginRight="24dp"-->
+        <!--android:layout_marginBottom="30dp"-->
+        <!--android:layout_alignParentRight="true"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:src="@drawable/abc_ic_ab_back_mtrl_am_alpha"-->
+        <!--android:rotation="180"/>-->
+
+    <TextView
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/setup_button"
+        android:clickable="true"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="32dp"
+        android:alpha="0"
+        android:visibility="gone"/>
+
+</RelativeLayout>

@@ -1,0 +1,4 @@
+# See for more help: https://github.com/romannurik/muzei
+# This is an example local.properties file.
+sdk.dir=/path/to/android/sdk
+keystore.props.file=../keystore.properties

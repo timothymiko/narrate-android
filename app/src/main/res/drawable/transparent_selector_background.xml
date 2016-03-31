@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="#E0E0E0" />
+        </shape>
+    </item>
+    <item android:state_activated="true">
+        <shape>
+            <solid android:color="#C3E4ED" />
+        </shape>
+    </item>
+    <item android:drawable="@drawable/transparent_selector_focused"
+        android:state_focused="true" />
+</selector>

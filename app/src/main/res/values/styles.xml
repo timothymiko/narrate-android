@@ -1,0 +1,142 @@
+<resources>
+
+    <style name="AppTheme.ViewEntry" parent="AppTheme">
+    </style>
+    <style name="AppTheme.ViewEntry.DetailLayout">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">@dimen/details_spacing</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+    <style name="AppTheme.ViewEntry.DetailText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">12dp</item>
+        <item name="android:textColor">@color/secondary_text</item>
+        <item name="android:textSize">13dp</item>
+    </style>
+    <style name="AppTheme.ViewEntry.DetailImage">
+        <item name="android:layout_width">16dp</item>
+        <item name="android:layout_height">16dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+
+    <style name="AppTheme.EditEntryBase" parent="Theme.AppCompat">
+        <item name="android:windowBackground">@color/off_white</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeStyle">@style/ActionMode</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:divider">@color/divider</item>
+    </style>
+    <style name="AppTheme.EditEntry.DetailLayout">
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+    <style name="AppTheme.EditEntry.DetailItem">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:background">@drawable/default_selector</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <style name="AppTheme.EditEntry" parent="AppTheme.EditEntryBase">
+    </style>
+
+    <!-- 2.0 -->
+    <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@color/window_background</item>
+        <item name="windowActionBarOverlay">true</item>
+        <item name="windowActionModeOverlay">true</item>
+        <item name="actionModeStyle">@style/ActionMode</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorAccent">@color/accent</item>
+        <item name="android:divider">@color/divider</item>
+    </style>
+
+    <style name="AppTheme" parent="BaseTheme">
+    </style>
+
+    <style name="AppTheme.Setup" parent="AppTheme">
+    </style>
+
+    <style name="AppTheme.Settings" parent="AppTheme">
+        <item name="android:windowBackground">@color/off_white</item>
+    </style>
+
+    <style name="Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:displayOptions">showHome|useLogo</item>
+        <item name="android:titleTextStyle">@style/Toolbar.Text</item>
+    </style>
+
+    <style name="Toolbar.Text" parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/White</item>
+    </style>
+
+
+    <style name="ActionMode" parent="Widget.AppCompat.ActionMode">
+        <item name="height">@dimen/toolbar_height</item>
+    </style>
+
+    <style name="Button_Material"/>
+    <style name="Button_Material_Flat">
+        <item name="android:background">@drawable/default_selector</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textAppearance">@android:style/TextAppearance.Holo.Widget.Button</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">@dimen/default_gap</item>
+        <item name="android:paddingRight">@dimen/default_gap</item>
+    </style>
+
+    <style name="Material"/>
+    <style name="Material.Header"/>
+    <style name="Material.Header.SubHeader">
+        <item name="android:layout_height">48dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingLeft">@dimen/default_gap</item>
+        <item name="android:paddingRight">@dimen/default_gap</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_gravity">start|center_vertical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="PasscodeInputItemStyle">
+        <item name="android:gravity">center</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:inputType">textPassword</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="PasscodeKeyboardButtonStyle" parent="@android:style/Widget.Button">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#FF464646</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/passcode_keyboard_button</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minHeight">38dp</item>
+    </style>
+
+    <style name="Theme.Transparent" parent="android:Theme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+</resources>

@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:minWidth="300dp"
+    android:orientation="horizontal"
+    tools:context="com.datonicgroup.narrate.app.ui.dialogs.UpgradeDialog">
+
+    <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/progress_wheel"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        wheel:matProg_barColor="?colorPrimary"
+        wheel:matProg_progressIndeterminate="true" />
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="8dp"
+        android:text="@string/upgrading"/>
+
+</LinearLayout>

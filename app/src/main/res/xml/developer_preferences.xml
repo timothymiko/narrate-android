@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/developer">
+
+        <Preference android:title="@string/disable_prefs"
+            android:summary="@string/disable_prefs_summary"
+            android:key="disable" />
+
+        <CheckBoxPreference android:title="@string/logging_enabled"
+            android:key="logging_enabled"
+            android:summary="@string/logging_summary"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

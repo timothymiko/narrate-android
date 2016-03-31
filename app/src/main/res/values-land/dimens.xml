@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="toolbar_height">48dp</dimen>
+    <dimen name="entries_dialog_width">450dp</dimen>
+    <dimen name="entries_dialog_max_height">275dp</dimen>
+    <dimen name="calendar_height">270dp</dimen>
+
+</resources>

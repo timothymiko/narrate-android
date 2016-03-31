@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--<item android:drawable="@drawable/black_background_shadow"/>-->
+    <item android:drawable="@drawable/accent_circle"/>
+    <item android:drawable="@drawable/widget_circle_selector"/>
+</layer-list>

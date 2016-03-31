@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="AbsView">
+        <attr name="maxWidth" format="dimension" />
+        <attr name="maxHeight" format="dimension" />
+        <attr name="colorFilter" format="color" />
+    </declare-styleable>
+
+    <declare-styleable name="RoundedImageView">
+        <attr name="corners" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="TabBarView">
+        <attr name="tabBarColor" format="color"/>
+        <attr name="tabBarSize" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="TabView">
+        <attr name="src" format="reference"/>
+        <attr name="text" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="DragLinearLayout">
+        <attr name="scrollSensitiveWidth" format="dimension" />
+        <attr name="placeholderView" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="AutoGridView">
+        <attr name="defaultCellWidth" format="dimension"/>
+    </declare-styleable>
+
+    <declare-styleable name="BookmarkView">
+        <attr name="fill_color" format="color"/>
+    </declare-styleable>
+
+    <declare-styleable name="Preference">
+        <attr name="key" format="string" />
+    </declare-styleable>
+
+</resources>

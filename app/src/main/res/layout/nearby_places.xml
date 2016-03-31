@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ListView
+        android:id="@+id/items"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:id="@+id/loader"
+        android:layout_width="match_parent"
+        android:layout_height="250dp">
+
+        <com.pnikosis.materialishprogress.ProgressWheel
+            android:id="@+id/loading_indicator"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:padding="8dp"
+            wheel:matProg_barColor="@color/accent"
+            wheel:matProg_progressIndeterminate="true" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AppTheme">
+
+        <TextView
+            android:id="@+id/left_button"
+            android:layout_width="65dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
+            android:text="@string/add_uc"
+            android:textStyle="bold"
+            android:textColor="?colorAccent"
+            android:gravity="center"
+            android:layout_centerVertical="true"
+            android:background="@drawable/default_selector"
+            android:clickable="true"/>
+
+        <AutoCompleteTextView
+            android:id="@+id/editText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_toLeftOf="@id/left_button"
+            android:fontFamily="sans-serif"
+            android:hint="@string/add_tag"
+            android:inputType="textCapSentences|textMultiLine|textShortMessage|textAutoCorrect"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:textSize="15dp"
+            android:autoText="true"
+            style="?android:editTextStyle"/>
+    </RelativeLayout>
+
+</LinearLayout>

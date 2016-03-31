@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/sync_indicator"
+        android:title="@string/sync"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/filter_sort"
+        android:title="@string/filter_sort"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/sync_data"
+        android:title="@string/sync_data"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/settings"
+        android:title="@string/title_activity_settings"
+        app:showAsAction="never"/>
+
+</menu>

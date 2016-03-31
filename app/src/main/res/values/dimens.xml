@@ -1,0 +1,54 @@
+<resources>
+
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="separator_height">10dp</dimen>
+
+    <dimen name="circle_background_size">50dp</dimen>
+    <dimen name="circle_background_width">48dp</dimen>
+    <dimen name="circle_background_height">50dp</dimen>
+
+    <dimen name="details_spacing">6dp</dimen>
+    <dimen name="places_list_height">300dp</dimen>
+    <dimen name="places_list_height_land">175dp</dimen>
+
+    <dimen name="default_gap">16dp</dimen>
+    <dimen name="button_material_flat_height">36dp</dimen>
+
+    <dimen name="eight_dp">8dp</dimen>
+    <dimen name="twelve_dp">12dp</dimen>
+    <dimen name="twenty_four_dp">24dp</dimen>
+    <dimen name="entries_date_bg_corner">4dp</dimen>
+    <dimen name="entry_photo_rnd_corner">3dp</dimen>
+
+    <dimen name="toolbar_height">56dp</dimen>
+    <dimen name="default_height">48dp</dimen>
+
+    <dimen name="tab_view_text_width_portrait">0dp</dimen>
+    <dimen name="tab_view_text_width_landscape">96dp</dimen>
+    <dimen name="toolbar_item_image_size">32dp</dimen>
+
+    <dimen name="thumb_cell_toolbar_height">32dp</dimen>
+    <dimen name="thumb_cell_height">250dp</dimen>
+    <dimen name="thumb_cell_width">250dp</dimen>
+    <dimen name="thumb_cell_text_height">150dp</dimen>
+
+    <dimen name="gridview_other_padding">2dp</dimen>
+    <dimen name="gridview_bottom_padding">72dp</dimen>
+
+    <dimen name="default_press_size">48dp</dimen>
+
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="checkbox_text_offset">25dp</dimen>
+
+    <dimen name="entries_dialog_width">325dp</dimen>
+    <dimen name="entries_dialog_max_height">450dp</dimen>
+
+    <dimen name="calendar_height">250dp</dimen>
+
+    <dimen name="view_entry_title_layout_vertical_padding">12dp</dimen>
+    <dimen name="map_view_view_pager_scroll_padding">80dp</dimen>
+
+    <dimen name="widget_size">60dp</dimen>
+    <dimen name="half_widget_size">30dp</dimen>
+</resources>

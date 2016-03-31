@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:weightSum="4"
+    android:paddingLeft="@dimen/default_gap"
+    android:paddingRight="@dimen/default_gap">
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:gravity="center_horizontal"
+        android:maxLength="1"/>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:gravity="center_horizontal"
+        android:maxLength="1" />
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:imeOptions="actionNext"
+        android:inputType="number"
+        android:gravity="center_horizontal"
+        android:maxLength="1" />
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:imeOptions="actionDone"
+        android:inputType="number"
+        android:gravity="center_horizontal"
+        android:maxLength="1" />
+
+</LinearLayout>
