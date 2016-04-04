@@ -1,7 +1,10 @@
 
 <img src="banner.png">
 
-Narrate is a beautiful journal created to give you the ability to record your thoughts, experiences, and ideas. With the ability to sync your journal across all of your devices, you won't have ever be without your journal. With a minimalist, material user interface, Narrate has a stunning user experience that is unmatched in this category. Click [here](https://play.google.com/store/apps/details?id=com.datonicgroup.narrate.app) to download Narrate from the Google Play Store.
+Narrate is a beautiful journal created to give you the ability to record your thoughts, experiences, and ideas. With the ability to sync your journal across all of your devices, you won't have ever be without your journal. With a minimalist, material user interface, Narrate has a stunning user experience that is unmatched in this category. 
+
+[Narrate on Google Play](https://play.google.com/store/apps/details?id=com.datonicgroup.narrate.app)<br>
+[Google+ Community](https://plus.google.com/communities/106662199081610755624)
 
 <h2>Install</h2>
 Narrate is available for download on [Google Play](https://play.google.com/store/apps/details?id=com.datonicgroup.narrate.app). If you would like to manually build and install Narrate on your Android device, Narrate depends on APIs from [Parse](http://parse.com) and [Dropbox](https://dropbox.com) so you will need to register a new application on your own with each service.
