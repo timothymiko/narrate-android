@@ -11,8 +11,7 @@ import com.bumptech.glide.load.engine.cache.LruResourceCache;
 import com.bumptech.glide.load.engine.cache.MemorySizeCalculator;
 import com.crashlytics.android.Crashlytics;
 import com.datonicgroup.narrate.app.BuildConfig;
-import com.parse.Parse;
-import com.parse.ParseInstallation;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -29,7 +28,6 @@ public class GlobalApplication extends MultiDexApplication {
         appContext = getApplicationContext();
         setupGlide();
         setupAnalytics();
-        setupParse();
     }
 
     public static Context getAppContext() {
@@ -55,8 +53,4 @@ public class GlobalApplication extends MultiDexApplication {
         }
     }
 
-    private void setupParse() {
-        Parse.initialize(this, BuildConfig.PARSE_APP_ID, BuildConfig.PARSE_CLIENT_KEY);
-        ParseInstallation.getCurrentInstallation().saveInBackground();
-    }
 }

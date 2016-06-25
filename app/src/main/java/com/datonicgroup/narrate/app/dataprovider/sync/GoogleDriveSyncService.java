@@ -25,11 +25,6 @@ import com.datonicgroup.narrate.app.models.Photo;
 import com.datonicgroup.narrate.app.models.SyncService;
 import com.datonicgroup.narrate.app.util.LogUtil;
 import com.google.gson.Gson;
-import com.parse.ParseInstallation;
-import com.parse.ParsePush;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -841,27 +836,29 @@ public class GoogleDriveSyncService {
             if (didMakeAtLeastOneLocalChangeOnRemote) {
 
                 String userId = Settings.getUserId();
-                String deviceId = ParseInstallation.getCurrentInstallation().getInstallationId();
-                if (userId != null && deviceId != null) {
 
-                    JSONObject payload = new JSONObject();
-                    try {
-                        payload.put("deviceId", deviceId);
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                    ParsePush push = new ParsePush();
-                    push.setChannel("usersync_" + userId);
-                    push.setData(payload);
-
-                    try {
-                        push.send();
-                    } catch (Exception e) {
-                        Log.d("Narrate", "Error notifying devices of updated content using Parse push notification.");
-                        e.printStackTrace();
-                    }
-                }
+                // TODO replace Parse to Firebase
+//                String deviceId = ParseInstallation.getCurrentInstallation().getInstallationId();
+//                if (userId != null && deviceId != null) {
+//
+//                    JSONObject payload = new JSONObject();
+//                    try {
+//                        payload.put("deviceId", deviceId);
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
+//
+//                    ParsePush push = new ParsePush();
+//                    push.setChannel("usersync_" + userId);
+//                    push.setData(payload);
+//
+//                    try {
+//                        push.send();
+//                    } catch (Exception e) {
+//                        Log.d("Narrate", "Error notifying devices of updated content using Parse push notification.");
+//                        e.printStackTrace();
+//                    }
+//                }
 
             }
 

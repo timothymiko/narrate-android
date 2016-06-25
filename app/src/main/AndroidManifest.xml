@@ -246,31 +246,24 @@
                 android:resource="@xml/syncadapter" />
         </service>
 
-        <service android:name="com.parse.PushService" />
-
-        <receiver android:name="com.parse.ParseBroadcastReceiver">
+        <!--FIREBASE SERVICES-->
+        <service
+            android:name=".dataprovider.receivers.MyFirebaseMessagingService">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
             </intent-filter>
-        </receiver>
-        <receiver android:name="com.parse.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
-            <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+        </service>
 
-                <!--Change with your package name-->
-                <category android:name="com.datonicgroup.narrate.app" />
-            </intent-filter>
-        </receiver>
-        <receiver android:name=".dataprovider.receivers.ParseGCMPushReceiver" android:exported="false">
+        <service
+            android:name=".dataprovider.receivers.MyFirebaseInstanceIDService">
             <intent-filter>
-                <action android:name="com.parse.push.intent.RECEIVE" />
-                <action android:name="com.parse.push.intent.DELETE" />
-                <action android:name="com.parse.push.intent.OPEN" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"/>
             </intent-filter>
-        </receiver>
+        </service>
 
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="5b2181afa5b9a77ac1b5038906b651f4dd0c03df" />
     </application>
 
 </manifest>
