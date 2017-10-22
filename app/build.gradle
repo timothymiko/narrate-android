@@ -89,7 +89,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile files('libs/dropbox-android-sdk-1.6.1.jar')
+    compile 'com.dropbox.core:dropbox-core-sdk:3.0.5'
     compile files('libs/httpmime-4.0.3.jar')
     compile files('libs/json_simple-1.1.jar')
     compile files('libs/FlurryAnalytics-5.1.0.jar')
