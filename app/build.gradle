@@ -59,8 +59,8 @@ android {
         buildTypes.each {
             it.buildConfigField 'String', 'DROPBOX_API_KEY', dropbox_api_key
             it.buildConfigField 'String', 'DROPBOX_API_SECRET', dropbox_api_secret
-            it.buildConfigField 'String', 'PARSE_APP_ID', parse_app_id
-            it.buildConfigField 'String', 'PARSE_CLIENT_KEY', parse_client_key
+            //it.buildConfigField 'String', 'PARSE_APP_ID', parse_app_id
+            //it.buildConfigField 'String', 'PARSE_CLIENT_KEY', parse_client_key
         }
 
         release {
@@ -137,7 +137,7 @@ dependencies {
     compile 'de.greenrobot:eventbus:2.4.0'
 
     compile 'com.parse.bolts:bolts-android:1.+'
-    compile 'com.parse:parse-android:1.+'
+//    compile 'com.parse:parse-android:1.+'
 }
 
 android.buildTypes.all { buildType ->
