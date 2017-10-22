@@ -2,7 +2,6 @@ package com.datonicgroup.narrate.app.ui.settings;
 
 import android.Manifest;
 import android.accounts.Account;
-import android.accounts.AccountManager;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
@@ -29,22 +28,11 @@ import com.datonicgroup.narrate.app.ui.dialogs.AutoSyncIntervalDialog;
 import com.datonicgroup.narrate.app.ui.dialogs.SyncFolderSettingsDialog;
 import com.datonicgroup.narrate.app.ui.dialogs.WarningDialog;
 import com.datonicgroup.narrate.app.util.DateUtil;
-import com.datonicgroup.narrate.app.util.LogUtil;
 import com.datonicgroup.narrate.app.util.PermissionsUtil;
 import com.datonicgroup.narrate.app.util.SettingsUtil;
-import com.dropbox.client2.DropboxAPI;
-import com.dropbox.client2.android.AndroidAuthSession;
-import com.dropbox.client2.session.AppKeyPair;
-import com.dropbox.client2.session.Session;
+import com.dropbox.core.android.Auth;
 import com.google.android.gms.auth.GoogleAuthException;
-import com.google.android.gms.auth.GoogleAuthUtil;
 import com.google.android.gms.auth.UserRecoverableAuthException;
-import com.google.api.services.drive.DriveScopes;
-
-import java.io.IOException;
-
-import retrofit2.Callback;
-import retrofit2.Response;
 
 /**
  * Created by timothymiko on 1/6/15.
@@ -64,7 +52,7 @@ public class SyncCard extends PreferenceCard implements View.OnClickListener, Sy
 
     private boolean mIsEnablingDropboxSync;
     public boolean mAuthenticatingDropbox;
-    private DropboxAPI<AndroidAuthSession> mDBApi;
+    private Auth dbx;
 
     private SyncFolderSettingsDialog mSyncFolderDialog;
     private AutoSyncIntervalDialog mIntervalDialog;
@@ -313,10 +301,7 @@ public class SyncCard extends PreferenceCard implements View.OnClickListener, Sy
                         public void onClick(DialogInterface dialog, int which) {
                             if ( Settings.getDropboxSyncToken() == null ) {
                                 mAuthenticatingDropbox = true;
-                                AppKeyPair appKeys = new AppKeyPair(BuildConfig.DROPBOX_API_KEY, BuildConfig.DROPBOX_API_SECRET);
-                                AndroidAuthSession session = new AndroidAuthSession(appKeys, Session.AccessType.DROPBOX);
-                                mDBApi = new DropboxAPI<AndroidAuthSession>(session);
-                                mDBApi.getSession().startOAuth2Authentication(mActivity);
+                                dbx.startOAuth2Authentication(mActivity, BuildConfig.DROPBOX_API_KEY);
                             } else {
                                 // show sync folder dialog
                                 mIsEnablingDropboxSync = true;
@@ -340,10 +325,7 @@ public class SyncCard extends PreferenceCard implements View.OnClickListener, Sy
                 } else {
                     if ( Settings.getDropboxSyncToken() == null ) {
                         mAuthenticatingDropbox = true;
-                        AppKeyPair appKeys = new AppKeyPair(BuildConfig.DROPBOX_API_KEY, BuildConfig.DROPBOX_API_SECRET);
-                        AndroidAuthSession session = new AndroidAuthSession(appKeys, Session.AccessType.DROPBOX);
-                        mDBApi = new DropboxAPI<AndroidAuthSession>(session);
-                        mDBApi.getSession().startOAuth2Authentication(mActivity);
+                        dbx.startOAuth2Authentication(mActivity, BuildConfig.DROPBOX_API_KEY);
                     } else {
                         // show sync folder dialog
                         mIsEnablingDropboxSync = true;
@@ -363,12 +345,9 @@ public class SyncCard extends PreferenceCard implements View.OnClickListener, Sy
         if ( mAuthenticatingDropbox ) {
             mAuthenticatingDropbox = false;
 
-            if (mDBApi != null && mDBApi.getSession().authenticationSuccessful()) {
+            if (dbx.getOAuth2Token() != null) {
                 try {
-                    // Required to complete auth, sets the access token on the session
-                    mDBApi.getSession().finishAuthentication();
-
-                    String dropboxToken = mDBApi.getSession().getOAuth2AccessToken();
+                    String dropboxToken = dbx.getOAuth2Token();
 
                     Settings.setDropboxSyncToken(dropboxToken);
                     Settings.setDropboxSyncEnabled(true);

@@ -24,7 +24,7 @@ import java.util.List;
  */
 public abstract class AbsSyncService {
 
-    private SyncService mSyncService;
+    protected SyncService mSyncService;
 
     AbsSyncService(SyncService mSyncService) {
         this.mSyncService = mSyncService;

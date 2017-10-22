@@ -69,6 +69,21 @@
         <meta-data android:name="com.parse.push.gcm_sender_id"
             android:value="101409433094" />
 
+        <activity
+            android:name="com.dropbox.core.android.AuthActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask">
+            <intent-filter>
+
+                <data android:scheme="db-anpnztfpry81xqg" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <!-- UI Activities -->
         <activity
             android:name=".ui.MainActivity"
