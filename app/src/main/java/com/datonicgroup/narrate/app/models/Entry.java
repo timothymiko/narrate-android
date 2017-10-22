@@ -3,6 +3,11 @@ package com.datonicgroup.narrate.app.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.datonicgroup.narrate.app.dataprovider.providers.EntryHelper;
+import com.dd.plist.PropertyListParser;
+
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -116,5 +121,20 @@ public class Entry extends AbsSyncItem implements Parcelable {
             return uuid.equals(((Entry) o).uuid);
         } else
             return false;
+    }
+
+    @Override
+    public String getDir() {
+        return "/entries";
+    }
+
+    @Override
+    public void writeToFile(File file) throws IOException {
+        PropertyListParser.saveAsXML(EntryHelper.toDictionary(this), file);
+    }
+
+    @Override
+    public AbsSyncItem readFromFile(File file) throws IOException {
+        return EntryHelper.parse(file);
     }
 }

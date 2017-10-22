@@ -3,7 +3,7 @@ apply plugin: 'io.fabric'
 
 buildscript {
     repositories {
-        maven { url 'https://maven.fabric.io/repo' }
+        maven { url 'https://maven.fabric.io/public' }
     }
 
     dependencies {
@@ -59,8 +59,8 @@ android {
         buildTypes.each {
             it.buildConfigField 'String', 'DROPBOX_API_KEY', dropbox_api_key
             it.buildConfigField 'String', 'DROPBOX_API_SECRET', dropbox_api_secret
-            it.buildConfigField 'String', 'PARSE_APP_ID', parse_app_id
-            it.buildConfigField 'String', 'PARSE_CLIENT_KEY', parse_client_key
+            //it.buildConfigField 'String', 'PARSE_APP_ID', parse_app_id
+            //it.buildConfigField 'String', 'PARSE_CLIENT_KEY', parse_client_key
         }
 
         release {
@@ -89,7 +89,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile files('libs/dropbox-android-sdk-1.6.1.jar')
+    compile 'com.dropbox.core:dropbox-core-sdk:3.0.5'
     compile files('libs/httpmime-4.0.3.jar')
     compile files('libs/json_simple-1.1.jar')
     compile files('libs/FlurryAnalytics-5.1.0.jar')
@@ -125,7 +125,7 @@ dependencies {
     compile 'com.google.apis:google-api-services-drive:v2-rev154-1.19.0' exclude module: 'httpclient'
     compile 'com.google.api-client:google-api-client-android:1.19.0' exclude module: 'httpclient'
     compile 'com.google.http-client:google-http-client-gson:1.19.0' exclude module: 'httpclient'
-    compile('com.crashlytics.sdk.android:crashlytics:2.0.1@aar') {
+    compile('com.crashlytics.sdk.android:crashlytics:2.7.1@aar') {
         transitive = true;
     }
 
@@ -137,7 +137,7 @@ dependencies {
     compile 'de.greenrobot:eventbus:2.4.0'
 
     compile 'com.parse.bolts:bolts-android:1.+'
-    compile 'com.parse:parse-android:1.+'
+//    compile 'com.parse:parse-android:1.+'
 }
 
 android.buildTypes.all { buildType ->
